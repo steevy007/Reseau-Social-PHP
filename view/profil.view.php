@@ -20,7 +20,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col col-md-12 ">
-                    <img class="rounded-circle" src="<?= add_gravatar($_SESSION['identifiant']['email']) ?>" alt="" style="width:30%">
+                    <img class="rounded-circle" src="<?= add_gravatar($_SESSION['identifiant']['email']) ?>" alt="" style="width:25%">
                     <div class="row mt-4">
 
                       <div class="col col-sm-6">

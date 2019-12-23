@@ -204,3 +204,15 @@ if(!function_exists('get_code_by_id')){
        }
 }
 }
+
+if(!function_exists('lister_user')){
+    function lister_user(){
+       global $BDD;
+       $req=$BDD->query("SELECT * FROM  users");
+       $data=$req->fetchAll(PDO::FETCH_OBJ);
+       //$req->execute();
+       if($req){
+           return $data;
+       }
+}
+}

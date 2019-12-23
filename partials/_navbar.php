@@ -1,7 +1,11 @@
 <?php require('./File/fonction.php'); ?>
 <nav class="navbar navbar-expand-sm fixed-top navbar-dark unique-color-dark">
-    
     <a class="navbar-brand" href="./index.php">Social Media All</a>
+    <ul class="navbar-nav">
+    <li class="nav-item <?= is_active('register') ?>">
+                <a class="nav-link waves-effect waves-light" href="./list_user.php">Liste des utilisateurs</a>
+            </li>
+    </ul>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +23,7 @@
             <?php if(is_connect()){ ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"> <img class="rounded-circle" style="width:20%" src="<?=add_gravatar($_SESSION['identifiant']['email'])?>" alt="" srcset=""> <?= get_session_user_info('pseudo') ?>
+                aria-haspopup="true" aria-expanded="false"> <img class="rounded-circle" style="width:15%" src="<?=add_gravatar($_SESSION['identifiant']['email'])?>" alt="" srcset=""> <?= get_session_user_info('pseudo') ?>
                 </a>
                 <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                 <a class="dropdown-item" href="./profil.php?id=<?=get_session_user_info('id')?>"><i class="far fa-user-circle"></i> Profil</a>
