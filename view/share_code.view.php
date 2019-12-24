@@ -1,9 +1,9 @@
 
 <?php 
 require('./partials/_head.php');
+require('./File/fonction.php');
 require('./Filter/c_user.php');
 require('./Config/database.php'); 
-require('./File/fonction.php');
 require('./Action/Save_code.php');
 require('./Action/show_code_id.php');
 ?>

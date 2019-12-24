@@ -12,7 +12,9 @@ if(isset($_POST['sign'])){
 
         if(count($error)==0){
             if(connecter(var_protect($identifiant),var_protect(sha1($password)))){
-                header('Location:./profil.php?id='.$_SESSION['identifiant']['id']);
+
+                redirect_unload('./profil.php?id='.$_SESSION['identifiant']['id']);
+                //header('Location:./profil.php?id='.$_SESSION['identifiant']['id']);
             }else{
                 save_data();
                 $error[]="Donnee Incorrect";

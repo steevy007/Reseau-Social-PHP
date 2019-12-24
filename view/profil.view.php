@@ -2,9 +2,9 @@
 <?php 
 
   require('./Config/database.php');
+  require('./File/fonction.php');
   require('./Filter/c_user.php');
   require('./partials/_head.php') ;
-  require('./File/fonction.php');
   require('./Action/Profil_Affich_User_info.php');
 ?>
     <!--NAVBAR-->
@@ -20,7 +20,7 @@
             <div class="card-body ">
               <div class="row">
                 <div class="col col-md-12 ">
-                    <img class="rounded-circle" src="<?= add_gravatar($_SESSION['identifiant']['email']) ?>" alt="" style="width:25%">
+                    <img class="rounded-circle" src="<?= add_gravatar($data->email) ?>" alt="" style="width:25%">
                     <div class="row mt-4">
 
                       <div class="col col-sm-6">

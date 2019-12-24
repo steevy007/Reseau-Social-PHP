@@ -2,9 +2,9 @@
 <?php 
 
 require('./Config/database.php');
+require('./File/fonction.php');
 require('./Filter/c_user.php');
 require('./partials/_head.php') ;
-require('./File/fonction.php');
 require('./Action/Profil_traitement.php');
 require('./Action/Profil_Affich_User_info.php');
 ?>

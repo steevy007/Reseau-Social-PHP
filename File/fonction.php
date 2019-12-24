@@ -62,6 +62,17 @@ if(!function_exists('flash_message')){
   }
 }
 
+if(!function_exists('redirect_unload')){
+    function redirect_unload($default_url){
+     if($_SESSION['last_url']){
+        header("Location:$_SESSION[last_url]");
+     }else{
+        $_SESSION['last_url']=null;
+        header("Location:$default_url");
+     }
+    }
+  }
+
 if(!function_exists('var_protect')){
     function var_protect($value){
         return trim(htmlspecialchars($value));
