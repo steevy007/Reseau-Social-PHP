@@ -2,7 +2,7 @@
 $req=$BDD->query("SELECT * from users");
 
 $nbre_total_articles = $req->rowCount();
-
+if($nbre_total_articles>0){
 $nbre_articles_par_page = 25;
 
 $nbre_pages_max_gauche_et_droite = 4;
@@ -59,3 +59,8 @@ if($last_page != 1){
 }
 $pagination.="</ul>
 </nav>";
+}else{
+    flash_message('Aucun Utilisateur pour le moment','warning');
+    header('Location:./index.php');
+    exit();
+}

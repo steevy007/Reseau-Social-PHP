@@ -6,6 +6,7 @@
   require('./Filter/c_user.php');
   require('./partials/_head.php') ;
   require('./Action/Profil_Affich_User_info.php');
+  require('./Action/Post_traitement.php');
 ?>
     <!--NAVBAR-->
     <?php require('./partials/_navbar.php') ?>
@@ -13,10 +14,10 @@
       
     <div class="contenue">
         <div class="row">
-          <div class="col-sm-5 ">
+          <div class="col-sm-6 ">
 
           <div class="card border-light mb-3 ">
-            <div class="card-header"><h4>Profil de Nom</h4></div>
+            <div class="card-header"><h4>Profil de <?=$data->pseudo?></h4></div>
             <div class="card-body ">
               <div class="row">
                 <div class="col col-md-12 ">
@@ -49,6 +50,44 @@
             </div>
           </div>
           </div>
+          
+          <div class="col-md-6 col-sm-12">
+        <?php if($_SESSION['identifiant']['id']==$_GET['id']) :?>
+          <form id="code"  method="GET" data-parsley-validate>
+          
+            <div class="satus-bar">
+              <div class="row">
+
+                <div class="col-md-12">
+                  
+                  <textarea data-parsley-trigger="keypress" data-parsley-minlength="3" minlenght="3" maxlength="150" data-parsley-maxlength="150" class="hoverable z-depth-1" id="area" required placeholder="Ajouter votre Status" name="post"></textarea>
+               
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 text-right">
+                <button type="submit" class="btn btn-elegant" name="sub"><i class="fas fa-paper-plane pr-2" aria-hidden="true"></i>User</button>
+                </div>
+              </div>
+            </div>
+            </form>
+        <?php endif;?>
+            <div class="row mt-4 pan">
+            <div class="col-md-12 col-sm-12">
+            <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title"><img class="rounded-circle" src="<?= add_gravatar($data->email) ?>" alt="" style="width:5%"> <?= $data->pseudo ?></h5>
+              <p class="card-text">Message</p>
+              <p class="card-text"><small class="text-muted">Date</small></p>
+            </div>
+          </div>
+            </div>
+          </div>
+          </div>
+
+
           
 
           
